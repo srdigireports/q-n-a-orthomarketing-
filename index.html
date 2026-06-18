@@ -1,0 +1,1640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>OrthoMarketing — 90-Day Ads Department Plan</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:#0D3B6E; --navy2:#1A5296; --blue:#1A6BB5; --blue-lt:#E8F1FB;
+  --gold:#C9960C; --gold-lt:#FFFBF0; --gold-d:#7A5800;
+  --white:#fff; --off:#F4F8FD; --border:#DDE5F0;
+  --gray:#64748B; --dark:#0F172A; --dark2:#1E293B;
+  --red:#EF4444; --amber:#F59E0B; --green:#10B981;
+  --red-bg:#FEF2F2; --amber-bg:#FFFBEB; --green-bg:#F0FDF4;
+  --electric:#00C8FF;
+  --r4:4px; --r8:8px; --r16:16px; --r24:24px;
+  --sh1:0 1px 3px rgba(0,0,0,.08),0 4px 12px rgba(0,0,0,.06);
+  --sh2:0 4px 16px rgba(0,0,0,.1),0 10px 32px rgba(0,0,0,.08);
+  --sh3:0 12px 40px rgba(0,0,0,.14),0 24px 64px rgba(0,0,0,.1);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;color:var(--dark);background:#fff;overflow-x:hidden;}
+
+/* ═══════════════════════════════════════
+   PROGRESS BAR
+═══════════════════════════════════════ */
+#prog{position:fixed;top:0;left:0;height:3px;width:0%;
+  background:linear-gradient(90deg,var(--gold),var(--blue),var(--electric));
+  z-index:9999;transition:width .08s linear;
+  box-shadow:0 0 10px rgba(0,200,255,.6);}
+
+/* ═══════════════════════════════════════
+   NAV — glass morphism
+═══════════════════════════════════════ */
+nav{position:fixed;top:3px;left:0;right:0;
+  background:rgba(13,59,110,.88);
+  backdrop-filter:blur(24px) saturate(180%);
+  -webkit-backdrop-filter:blur(24px) saturate(180%);
+  padding:9px 36px;display:flex;align-items:center;gap:5px;
+  z-index:998;border-bottom:1px solid rgba(255,255,255,.1);
+  box-shadow:0 4px 24px rgba(0,0,0,.25);}
+.nb{font-family:'Space Grotesk',sans-serif;font-size:11.5px;font-weight:700;
+  letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.9);
+  margin-right:8px;white-space:nowrap;}
+.np{width:27px;height:27px;border-radius:50%;
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.12);
+  color:rgba(255,255,255,.5);font-family:'Space Grotesk',sans-serif;
+  font-size:10.5px;font-weight:700;display:flex;align-items:center;
+  justify-content:center;cursor:pointer;text-decoration:none;
+  transition:all .2s cubic-bezier(.4,0,.2,1);}
+.np:hover{background:rgba(201,150,12,.85);color:#1a0f00;border-color:var(--gold);
+  transform:scale(1.18);box-shadow:0 0 14px rgba(201,150,12,.45);}
+.np.active{background:var(--gold);color:#1a0f00;border-color:var(--gold);
+  transform:scale(1.1);box-shadow:0 0 16px rgba(201,150,12,.5);}
+.np.star{width:auto;padding:0 10px;border-radius:13px;font-size:9.5px;letter-spacing:.5px;}
+
+/* ═══════════════════════════════════════
+   KEYFRAMES
+═══════════════════════════════════════ */
+@keyframes meshDrift{
+  0%  {transform:scale(1) translate(0,0);}
+  33% {transform:scale(1.06) translate(-1%,1%);}
+  66% {transform:scale(1.03) translate(1%,-1%);}
+  100%{transform:scale(1) translate(0,0);}
+}
+@keyframes gridScroll{
+  0%  {background-position:0 0;}
+  100%{background-position:56px 56px;}
+}
+@keyframes slideUp{
+  from{opacity:0;transform:translateY(36px);}
+  to{opacity:1;transform:translateY(0);}
+}
+@keyframes floatBob{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-7px);}
+}
+@keyframes bob{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(9px);}
+}
+@keyframes shimmer{
+  0%  {background-position:-200% center;}
+  100%{background-position: 200% center;}
+}
+@keyframes pivotPulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(201,150,12,.75),0 0 20px rgba(201,150,12,.3);}
+  50%{box-shadow:0 0 0 18px rgba(201,150,12,0),0 0 50px rgba(201,150,12,.6);}
+}
+@keyframes fixPulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(16,185,129,.7),0 0 15px rgba(16,185,129,.25);}
+  50%{box-shadow:0 0 0 14px rgba(16,185,129,0),0 0 40px rgba(16,185,129,.5);}
+}
+@keyframes connPulse{
+  0%,100%{opacity:.35;} 50%{opacity:.85;}
+}
+@keyframes glowLine{
+  0%{stroke-dashoffset:1000;}
+  100%{stroke-dashoffset:0;}
+}
+@keyframes fadePop{
+  from{opacity:0;transform:scale(.92);}
+  to{opacity:1;transform:scale(1);}
+}
+@keyframes spinIn{
+  from{opacity:0;transform:rotate(-8deg) scale(.9);}
+  to{opacity:1;transform:rotate(0) scale(1);}
+}
+
+/* ═══════════════════════════════════════
+   TYPOGRAPHY
+═══════════════════════════════════════ */
+.eyebrow{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.sec-title{font-family:'Space Grotesk',sans-serif;font-size:40px;font-weight:800;
+  line-height:1.1;margin-bottom:14px;letter-spacing:-.5px;}
+.sec-sub{font-size:16px;line-height:1.8;color:var(--gray);max-width:660px;margin-bottom:52px;}
+.on-dark .sec-title{color:#fff;}
+.on-dark .sec-sub{color:rgba(255,255,255,.6);}
+.on-dark .eyebrow{color:rgba(201,150,12,.9);}
+
+/* ═══════════════════════════════════════
+   LAYOUT
+═══════════════════════════════════════ */
+.wrap{max-width:1240px;margin:0 auto;padding:96px 56px;}
+.bg-white{background:#fff;}
+.bg-off{background:var(--off);}
+.bg-navy{background:var(--navy);}
+.bg-dark{background:var(--dark);}
+
+/* ═══════════════════════════════════════
+   SECTION ENTRY LINES
+═══════════════════════════════════════ */
+.s-entry{position:relative;}
+.s-entry::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent 0%,rgba(26,107,181,.25) 30%,rgba(201,150,12,.2) 50%,rgba(26,107,181,.25) 70%,transparent 100%);
+}
+
+/* ═══════════════════════════════════════
+   HERO
+═══════════════════════════════════════ */
+.hero-outer{position:relative;background:#020C1B;overflow:hidden;min-height:100vh;
+  display:flex;flex-direction:column;justify-content:center;}
+.hero-mesh{position:absolute;inset:-20%;z-index:0;
+  background:
+    radial-gradient(ellipse 70% 70% at 12% 40%, rgba(26,82,157,.6) 0%,transparent 55%),
+    radial-gradient(ellipse 55% 55% at 82% 18%, rgba(0,75,160,.4) 0%,transparent 50%),
+    radial-gradient(ellipse 65% 65% at 52% 88%, rgba(10,45,105,.5) 0%,transparent 55%),
+    radial-gradient(ellipse 40% 40% at 92% 68%, rgba(0,200,255,.07) 0%,transparent 45%);
+  animation:meshDrift 14s ease-in-out infinite alternate;}
+.hero-grid{position:absolute;inset:0;z-index:1;
+  background-image:
+    linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);
+  background-size:56px 56px;
+  animation:gridScroll 28s linear infinite;}
+.hero-inner{position:relative;z-index:2;max-width:1240px;margin:0 auto;padding:80px 56px;}
+.hero-kicker{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:20px;
+  animation:slideUp .8s ease .2s both;}
+.hero-h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(42px,5.5vw,80px);
+  font-weight:800;line-height:1.05;color:#fff;margin-bottom:20px;letter-spacing:-1.5px;
+  animation:slideUp .8s ease .4s both;}
+.hero-h1 span{
+  background:linear-gradient(135deg,var(--gold) 0%,#F5C842 40%,var(--gold) 80%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-sub{font-size:17px;line-height:1.75;color:rgba(255,255,255,.58);
+  max-width:580px;margin-bottom:48px;
+  animation:slideUp .8s ease .6s both;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:64px;
+  animation:slideUp .8s ease .8s both;}
+.hero-pill{display:inline-flex;align-items:center;gap:7px;
+  padding:8px 16px;border-radius:24px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.14);
+  color:rgba(255,255,255,.75);font-size:13px;font-weight:500;
+  transition:all .25s ease;cursor:default;
+  animation:floatBob 4s ease-in-out infinite;}
+.hero-pill:hover{background:rgba(201,150,12,.2);border-color:rgba(201,150,12,.5);
+  color:#fff;transform:translateY(-3px)!important;
+  box-shadow:0 8px 24px rgba(201,150,12,.2);}
+.hero-pill .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);
+  box-shadow:0 0 8px rgba(201,150,12,.7);}
+.scroll-cue{display:flex;flex-direction:column;align-items:flex-start;gap:4px;
+  animation:slideUp .8s ease 1s both;}
+.scroll-cue .arrow{width:36px;height:36px;border-radius:50%;
+  border:1.5px solid rgba(255,255,255,.2);
+  display:flex;align-items:center;justify-content:center;
+  color:rgba(255,255,255,.45);font-size:16px;
+  animation:bob 2s ease-in-out infinite;}
+.scroll-cue .label{font-size:11px;color:rgba(255,255,255,.3);letter-spacing:1.5px;text-transform:uppercase;}
+
+/* ═══════════════════════════════════════
+   RULE CALLOUT
+═══════════════════════════════════════ */
+.rule{background:var(--gold-lt);border-left:4px solid var(--gold);
+  padding:18px 22px;border-radius:0 var(--r8) var(--r8) 0;margin-top:32px;
+  transition:transform .25s ease,box-shadow .25s ease;cursor:default;}
+.rule:hover{transform:translateX(5px);box-shadow:-4px 0 24px rgba(201,150,12,.2);}
+.rule b{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;
+  color:var(--gold-d);letter-spacing:.5px;text-transform:uppercase;}
+.rule p{font-size:14.5px;line-height:1.65;color:var(--dark2);margin-top:4px;}
+
+/* ═══════════════════════════════════════
+   S1 — PRE-LAUNCH QA
+═══════════════════════════════════════ */
+.phase-flow{display:flex;align-items:stretch;gap:0;margin-bottom:40px;overflow-x:auto;padding-bottom:8px;}
+.phase-card{flex:1;min-width:200px;background:#fff;border:1.5px solid var(--border);
+  border-radius:var(--r16);padding:28px 22px;position:relative;
+  box-shadow:var(--sh1);
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+  transform:perspective(900px) rotateX(0deg) rotateY(0deg) translateZ(0);
+  transform-style:preserve-3d;cursor:default;will-change:transform;}
+.phase-card:hover{border-color:var(--blue);
+  box-shadow:0 20px 50px rgba(26,107,181,.14),0 0 0 1px var(--blue);
+  transform:perspective(900px) rotateX(0deg) rotateY(0deg) translateZ(0)!important;}
+.pnum{font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;color:var(--blue);
+  background:var(--blue-lt);padding:3px 8px;border-radius:4px;
+  display:inline-block;margin-bottom:12px;}
+.phase-card h4{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;
+  color:var(--navy);margin-bottom:12px;line-height:1.3;}
+.phase-card ul{list-style:none;display:flex;flex-direction:column;gap:7px;}
+.phase-card li{font-size:12.5px;line-height:1.5;color:var(--gray);
+  padding-left:14px;position:relative;}
+.phase-card li::before{content:'→';position:absolute;left:0;color:var(--blue);font-size:10px;top:2px;}
+.phase-arrow{display:flex;align-items:center;padding:0 4px;flex-shrink:0;}
+.phase-arrow span{font-size:20px;color:var(--border);font-weight:300;}
+.launch-cap{background:var(--navy);border-radius:var(--r16);padding:28px 22px;
+  min-width:160px;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;text-align:center;gap:8px;flex-shrink:0;
+  transition:transform .3s ease,box-shadow .3s ease;cursor:default;}
+.launch-cap:hover{transform:scale(1.06);
+  box-shadow:0 0 40px rgba(13,59,110,.5),0 0 80px rgba(13,59,110,.2);}
+.lcheck{font-size:28px;display:block;}
+.launch-cap span{color:#fff;font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;line-height:1.4;}
+
+/* ═══════════════════════════════════════
+   S2 — HEALTH MONITORING
+═══════════════════════════════════════ */
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:40px;}
+.tier{border-radius:var(--r16);overflow:hidden;box-shadow:var(--sh1);
+  transition:transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s ease;
+  cursor:default;transform:perspective(900px) rotateX(0) rotateY(0) translateZ(0);
+  transform-style:preserve-3d;will-change:transform;}
+.tier:hover{transform:translateY(-8px)!important;}
+.tier-head{padding:18px 22px 16px;}
+.tier-body{background:#fff;padding:20px 22px;}
+.tier.critical .tier-head{background:linear-gradient(135deg,#B91C1C,#EF4444);}
+.tier.warning  .tier-head{background:linear-gradient(135deg,#B45309,#F59E0B);}
+.tier.watch    .tier-head{background:linear-gradient(135deg,#065F46,#10B981);}
+.tier.critical:hover{box-shadow:0 24px 60px rgba(239,68,68,.22),0 0 0 2px #EF4444,0 0 50px rgba(239,68,68,.1);}
+.tier.warning:hover {box-shadow:0 24px 60px rgba(245,158,11,.22),0 0 0 2px #F59E0B,0 0 50px rgba(245,158,11,.1);}
+.tier.watch:hover   {box-shadow:0 24px 60px rgba(16,185,129,.22),0 0 0 2px #10B981,0 0 50px rgba(16,185,129,.1);}
+.tier-label{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:800;color:#fff;margin-bottom:4px;}
+.tier-sla{font-size:11px;font-weight:600;color:rgba(255,255,255,.7);letter-spacing:1px;text-transform:uppercase;}
+.tier-body ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.tier-body li{font-size:13px;line-height:1.55;color:var(--dark2);padding-left:16px;position:relative;}
+.tier-body li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;}
+.tier.critical .tier-body li::before{background:var(--red);}
+.tier.warning  .tier-body li::before{background:var(--amber);}
+.tier.watch    .tier-body li::before{background:var(--green);}
+.kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:8px;}
+.kpi-card{background:#fff;border:1.5px solid var(--border);border-top:3px solid var(--navy);
+  border-radius:var(--r12,12px);padding:22px 18px;text-align:center;box-shadow:var(--sh1);
+  transition:transform .25s ease,box-shadow .25s ease,border-top-color .25s ease;
+  cursor:default;transform:perspective(900px) rotateX(0) rotateY(0) translateZ(0);
+  transform-style:preserve-3d;will-change:transform;}
+.kpi-card:hover{transform:translateY(-8px)!important;
+  border-top-color:var(--blue)!important;
+  box-shadow:0 20px 50px rgba(26,107,181,.13),0 0 0 1px var(--blue);}
+.km{font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:800;color:var(--navy);
+  transition:color .2s ease;}
+.kpi-card:hover .km{color:var(--blue);}
+.kl{font-size:12px;font-weight:600;color:var(--gray);margin-top:4px;line-height:1.4;}
+
+/* ═══════════════════════════════════════
+   S3 — DIAGNOSTIC SEQUENCE
+═══════════════════════════════════════ */
+.diag-flow{display:flex;flex-direction:column;gap:0;max-width:740px;margin-bottom:40px;}
+.diag-step{display:flex;align-items:flex-start;gap:20px;padding:20px 24px;
+  background:#fff;border:1.5px solid var(--border);border-radius:var(--r12,12px);
+  position:relative;box-shadow:var(--sh1);
+  opacity:0;transform:translateX(-32px);
+  transition:opacity .5s ease,transform .5s ease,box-shadow .25s ease,border-color .25s ease;}
+.diag-step.step-in{opacity:1;transform:translateX(0);}
+.diag-step:not(.step-final):hover{transform:translateX(8px)!important;
+  border-color:var(--blue)!important;
+  box-shadow:0 8px 30px rgba(26,107,181,.12),0 0 0 1px var(--blue)!important;}
+.diag-step.step-final:hover{
+  box-shadow:0 12px 40px rgba(13,59,110,.4),0 0 40px rgba(13,59,110,.2)!important;}
+.dnum{width:40px;height:40px;border-radius:50%;background:var(--blue-lt);
+  color:var(--navy);font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:800;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.dtxt h4{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;
+  color:var(--navy);margin-bottom:4px;}
+.dtxt p{font-size:13px;line-height:1.6;color:var(--gray);}
+.diag-conn{display:flex;align-items:center;padding:2px 0 2px 38px;}
+.diag-conn-line{width:2px;height:28px;background:linear-gradient(var(--border),var(--blue));
+  border-radius:2px;animation:connPulse 2.4s ease-in-out infinite;}
+.step-warn .dnum{background:var(--red-bg);color:var(--red);}
+.step-warn{border-color:rgba(239,68,68,.25)!important;}
+.step-final .dnum{background:var(--navy);color:#fff;}
+.step-final{border-color:var(--navy)!important;background:linear-gradient(135deg,rgba(13,59,110,.04),rgba(26,107,181,.04))!important;}
+.diag-rule{background:linear-gradient(135deg,#0D3B6E,#1A5296);color:#fff;
+  border-radius:var(--r12,12px);padding:22px 28px;margin-top:24px;
+  display:flex;gap:16px;align-items:flex-start;}
+.diag-rule-icon{font-size:28px;flex-shrink:0;margin-top:2px;}
+.diag-rule-txt h4{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:800;
+  color:#fff;margin-bottom:6px;}
+.diag-rule-txt p{font-size:14px;line-height:1.65;color:rgba(255,255,255,.72);}
+
+/* ═══════════════════════════════════════
+   S4 — TEAM
+═══════════════════════════════════════ */
+.org{display:flex;flex-direction:column;align-items:center;gap:0;}
+.org-top{display:flex;justify-content:center;}
+.org-box{padding:16px 24px;border-radius:var(--r12,12px);font-family:'Space Grotesk',sans-serif;
+  font-size:14px;font-weight:700;color:#fff;text-align:center;min-width:220px;
+  box-shadow:var(--sh2);
+  transition:transform .25s ease,box-shadow .25s ease;cursor:default;}
+.org-box:hover{transform:translateY(-5px) scale(1.03)!important;}
+.org-box.lead{background:linear-gradient(135deg,var(--gold-d),var(--gold));color:#1a0f00;
+  min-width:300px;}
+.org-box.lead:hover{box-shadow:0 16px 50px rgba(201,150,12,.4),0 0 40px rgba(201,150,12,.15)!important;}
+.org-box.sr{background:linear-gradient(135deg,var(--navy),var(--navy2));}
+.org-box.sr:hover{box-shadow:0 16px 40px rgba(13,59,110,.35)!important;}
+.org-box.mg{background:linear-gradient(135deg,var(--blue),#2179C9);}
+.org-box.mg:hover{box-shadow:0 16px 40px rgba(26,107,181,.3)!important;}
+.org-box.co{background:linear-gradient(135deg,#475569,#64748B);}
+.ocount{font-size:11px;font-weight:500;opacity:.75;margin-top:4px;line-height:1.4;}
+.org-line{height:28px;display:flex;justify-content:center;}
+.org-vert{width:2px;height:100%;background:var(--border);}
+.org-mid{display:flex;justify-content:center;gap:16px;margin-bottom:0;}
+.org-bot{display:flex;gap:16px;justify-content:center;margin-top:0;}
+.org-branch{display:flex;flex-direction:column;align-items:center;gap:0;}
+.org-brline{height:24px;display:flex;justify-content:center;}
+.org-brline div{width:2px;height:100%;background:var(--border);}
+.cad-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px;}
+.cad-card{background:#fff;border-radius:var(--r12,12px);padding:22px 18px;
+  border:1.5px solid var(--border);box-shadow:var(--sh1);
+  transition:transform .25s ease,box-shadow .25s ease;cursor:default;}
+.cad-card:hover{transform:translateY(-7px)!important;
+  box-shadow:0 20px 50px rgba(0,0,0,.1)!important;}
+.cad-badge{font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  padding:3px 9px;border-radius:10px;display:inline-block;margin-bottom:10px;}
+.cad-card h4{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;
+  color:var(--navy);margin-bottom:8px;}
+.cad-card p{font-size:12.5px;line-height:1.6;color:var(--gray);}
+
+/* ═══════════════════════════════════════
+   S5 — PROACTIVE (DARK)
+═══════════════════════════════════════ */
+.cal-label{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:10px;}
+.cal-row{display:flex;gap:6px;margin-bottom:40px;}
+.month{flex:1;padding:14px 6px 12px;border-radius:var(--r8);text-align:center;
+  font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:rgba(255,255,255,.4);
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);
+  transition:transform .2s ease,box-shadow .2s ease;cursor:default;position:relative;overflow:hidden;}
+.month:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.3);}
+.month-tag{font-size:9px;font-weight:600;letter-spacing:1px;text-transform:uppercase;
+  margin-top:4px;display:block;opacity:.8;}
+.month.hot{color:#fff;background:var(--gold);border-color:rgba(201,150,12,.4);
+  box-shadow:0 0 20px rgba(201,150,12,.25);}
+.month.hot::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,.3) 50%,transparent 100%);
+  background-size:200% 100%;animation:shimmer 2.6s ease-in-out infinite;}
+.month.hot:hover{transform:translateY(-5px);
+  box-shadow:0 12px 30px rgba(201,150,12,.4),0 0 40px rgba(201,150,12,.15)!important;}
+.month.warm{color:rgba(255,255,255,.8);background:rgba(201,150,12,.3);
+  border-color:rgba(201,150,12,.25);}
+.audit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.audit-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);
+  border-radius:var(--r12,12px);padding:22px;
+  transition:background .25s ease,border-color .25s ease,transform .25s ease;cursor:default;}
+.audit-card:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.2);
+  transform:translateY(-4px);}
+.audit-card h4{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;
+  color:#fff;margin-bottom:8px;}
+.audit-card p{font-size:13px;line-height:1.6;color:rgba(255,255,255,.55);}
+
+/* ═══════════════════════════════════════
+   S6 — CROSS-FUNCTIONAL
+═══════════════════════════════════════ */
+.matrix{border-radius:var(--r16);overflow:hidden;
+  border:1.5px solid var(--border);box-shadow:var(--sh1);margin-bottom:32px;}
+.matrix table{width:100%;border-collapse:collapse;}
+.matrix th{background:var(--navy);color:#fff;font-family:'Space Grotesk',sans-serif;
+  font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  padding:14px 18px;text-align:left;}
+.matrix td{padding:13px 18px;font-size:13px;color:var(--dark2);border-bottom:1px solid var(--border);
+  transition:background .15s ease;}
+.matrix tr:last-child td{border-bottom:none;}
+.matrix tr:hover td{background:var(--off);}
+.matrix .owner{font-weight:600;color:var(--navy);}
+.matrix .sla{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:.5px;padding:3px 8px;border-radius:10px;display:inline-block;}
+.sla-crit{background:var(--red-bg);color:var(--red);}
+.sla-warn{background:var(--amber-bg);color:#B45309;}
+.sla-ok{background:var(--green-bg);color:#065F46;}
+.matrix .tag{font-size:12px;padding:2px 8px;border-radius:4px;background:var(--blue-lt);
+  color:var(--blue);font-weight:600;}
+
+/* ═══════════════════════════════════════
+   S7 — CREATIVE STRATEGY
+═══════════════════════════════════════ */
+.seg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:40px;}
+.seg-card{border-radius:var(--r16);overflow:hidden;box-shadow:var(--sh1);
+  transition:transform .25s cubic-bezier(.4,0,.2,1),box-shadow .25s ease;
+  cursor:default;transform:perspective(900px) rotateX(0) rotateY(0) translateZ(0);
+  transform-style:preserve-3d;will-change:transform;}
+.seg-card:hover{transform:translateY(-10px)!important;
+  box-shadow:0 28px 70px rgba(0,0,0,.15)!important;}
+.seg-head{padding:24px 22px 20px;color:#fff;}
+.seg-head h4{font-family:'Space Grotesk',sans-serif;font-size:17px;font-weight:800;
+  margin-bottom:4px;}
+.seg-head p{font-size:12px;opacity:.75;font-weight:500;}
+.seg-body{background:#fff;padding:22px 22px;}
+.seg-body ul{list-style:none;display:flex;flex-direction:column;gap:9px;}
+.seg-body li{font-size:13px;line-height:1.55;color:var(--dark2);padding-left:16px;position:relative;}
+.seg-body li::before{content:'›';position:absolute;left:0;color:var(--blue);font-weight:700;font-size:15px;top:-1px;}
+.seg-card.hv .seg-head{background:linear-gradient(135deg,#0D3B6E,#1A5296);}
+.seg-card.acc .seg-head{background:linear-gradient(135deg,#1D4ED8,#3B82F6);}
+.seg-card.teen .seg-head{background:linear-gradient(135deg,#065F46,#10B981);}
+.test-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.test-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--r12,12px);
+  padding:20px 18px;box-shadow:var(--sh1);
+  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;cursor:default;}
+.test-card:hover{transform:translateY(-6px)!important;border-color:var(--blue)!important;
+  box-shadow:0 16px 40px rgba(26,107,181,.12)!important;}
+.test-card h5{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;
+  color:var(--blue);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;}
+.test-card p{font-size:13px;line-height:1.6;color:var(--gray);}
+
+/* ═══════════════════════════════════════
+   S8 — LANDING PAGES (DARK)
+═══════════════════════════════════════ */
+.lp-wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+.lp-mockup{background:#1E293B;border-radius:var(--r16);overflow:hidden;
+  box-shadow:var(--sh3);
+  transition:transform .35s ease,box-shadow .35s ease;cursor:default;}
+.lp-mockup:hover{transform:perspective(1200px) rotateY(-5deg) translateX(8px)!important;
+  box-shadow:0 40px 100px rgba(0,0,0,.5)!important;}
+.lp-bar{background:#2D3748;padding:10px 14px;display:flex;align-items:center;gap:6px;}
+.lp-dot{width:11px;height:11px;border-radius:50%;}
+.lp-url{flex:1;background:#1A202C;border-radius:3px;padding:4px 10px;
+  font-size:10px;font-family:monospace;color:rgba(255,255,255,.35);margin:0 8px;}
+.lp-page{padding:0;}
+.lp-hero{background:linear-gradient(135deg,#0D3B6E,#1A5296);padding:24px 20px;
+  text-align:center;color:#fff;}
+.lp-hero h3{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:800;margin-bottom:8px;}
+.lp-hero p{font-size:11px;opacity:.7;margin-bottom:12px;}
+.lp-form{background:rgba(255,255,255,.1);border-radius:var(--r8);padding:12px;display:flex;flex-direction:column;gap:6px;}
+.lp-input{background:rgba(255,255,255,.9);border-radius:4px;padding:7px 10px;
+  font-size:11px;color:#444;font-family:'Inter',sans-serif;}
+.lp-btn{background:var(--gold);color:#1a0f00;border-radius:4px;padding:8px;
+  font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:800;text-align:center;}
+.lp-trust{background:#fff;padding:10px 20px;display:flex;justify-content:center;gap:16px;}
+.lp-trust span{font-size:10px;color:var(--gray);font-weight:600;}
+.lp-body{background:#fff;padding:14px 20px;}
+.lp-body p{font-size:11px;color:var(--gray);line-height:1.6;margin-bottom:8px;}
+.lp-rules{display:flex;flex-direction:column;gap:14px;}
+.lp-rule-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);
+  border-radius:var(--r12,12px);padding:18px 20px;
+  transition:background .25s ease,border-color .25s ease,transform .25s ease;cursor:default;}
+.lp-rule-card:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.22);
+  transform:translateX(6px);}
+.lp-rule-card h5{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;
+  color:#fff;margin-bottom:5px;}
+.lp-rule-card p{font-size:12.5px;line-height:1.55;color:rgba(255,255,255,.55);}
+.lp-warn{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.25);
+  border-radius:var(--r12,12px);padding:18px 20px;margin-top:20px;}
+.lp-warn h5{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;
+  color:#FCA5A5;margin-bottom:5px;}
+.lp-warn p{font-size:12.5px;line-height:1.55;color:rgba(252,165,165,.7);}
+
+/* ═══════════════════════════════════════
+   S9 — BENCHMARKS
+═══════════════════════════════════════ */
+.bench-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:40px;}
+.bench-section h3{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;
+  color:var(--navy);margin-bottom:18px;padding-bottom:10px;
+  border-bottom:2px solid var(--border);}
+.bench-row{margin-bottom:14px;}
+.bench-label{display:flex;justify-content:space-between;align-items:center;
+  font-size:13px;margin-bottom:5px;}
+.bench-label span:first-child{color:var(--dark2);}
+.bench-val{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:var(--navy);}
+.bench-track{background:var(--border);border-radius:99px;height:7px;overflow:hidden;}
+.bench-bar{height:100%;border-radius:99px;width:0;
+  transition:width 1.5s cubic-bezier(.4,0,.2,1);}
+.bench-bar.g{background:linear-gradient(90deg,var(--navy),var(--blue));}
+.bench-bar.b{background:linear-gradient(90deg,#1D4ED8,#60A5FA);}
+.crm-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:32px;}
+.crm-card{background:#fff;border-left:4px solid var(--border);border-radius:var(--r8);
+  padding:16px 16px;box-shadow:var(--sh1);
+  transition:transform .25s ease,border-left-color .25s ease,box-shadow .25s ease;cursor:default;}
+.crm-card:hover{transform:translateY(-6px);border-left-color:var(--navy);
+  box-shadow:0 16px 40px rgba(0,0,0,.1);}
+.crm-val{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:800;color:var(--navy);}
+.crm-lbl{font-size:12px;color:var(--gray);margin-top:4px;line-height:1.4;}
+.four-day{background:linear-gradient(135deg,var(--gold-lt),#FFF8E1);
+  border:1.5px solid rgba(201,150,12,.3);border-radius:var(--r12,12px);
+  padding:22px 24px;display:flex;gap:16px;align-items:flex-start;}
+.four-day-icon{font-size:28px;flex-shrink:0;}
+.four-day h4{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:800;
+  color:var(--gold-d);margin-bottom:6px;}
+.four-day p{font-size:14px;line-height:1.65;color:#5C4A00;}
+
+/* ═══════════════════════════════════════
+   S10 — TOOLS
+═══════════════════════════════════════ */
+.tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:40px;}
+.tool-cat{background:#fff;border:1.5px solid var(--border);border-radius:var(--r16);
+  padding:24px 20px;box-shadow:var(--sh1);
+  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease,background .25s ease;
+  cursor:default;}
+.tool-cat:hover{transform:translateY(-7px);background:#FAFCFF;
+  border-color:var(--blue);
+  box-shadow:0 20px 50px rgba(26,107,181,.12),0 0 0 1px var(--blue);}
+.tool-cat h4{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;
+  color:var(--navy);letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;
+  padding-bottom:10px;border-bottom:1.5px solid var(--border);}
+.tool-item{display:flex;align-items:center;gap:10px;padding:7px 4px;border-radius:var(--r4);
+  transition:background .15s ease,padding-left .15s ease;cursor:default;}
+.tool-item:hover{background:var(--off);padding-left:8px!important;}
+.tool-icon{width:30px;height:30px;border-radius:var(--r4);display:flex;align-items:center;
+  justify-content:center;font-size:14px;flex-shrink:0;}
+.tool-info strong{font-size:13px;font-weight:600;color:var(--dark);display:block;}
+.tool-info span{font-size:11px;color:var(--gray);}
+.auto-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px;}
+.auto-card{border-radius:var(--r12,12px);overflow:hidden;box-shadow:var(--sh1);
+  transition:transform .25s ease,box-shadow .25s ease;cursor:default;}
+.auto-card:hover{transform:translateY(-7px);
+  box-shadow:0 20px 50px rgba(0,0,0,.12);}
+.auto-head{padding:16px 20px;font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:800;color:#fff;}
+.auto-body{background:#fff;padding:16px 20px;font-size:13px;line-height:1.6;color:var(--gray);}
+.auto-card:nth-child(1) .auto-head{background:linear-gradient(135deg,#0D3B6E,#1A5296);}
+.auto-card:nth-child(2) .auto-head{background:linear-gradient(135deg,#1D4ED8,#3B82F6);}
+.auto-card:nth-child(3) .auto-head{background:linear-gradient(135deg,#065F46,#10B981);}
+.rep-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.rep-card{border-radius:var(--r12,12px);padding:20px 18px;
+  border:1.5px solid var(--border);box-shadow:var(--sh1);
+  transition:transform .25s ease,box-shadow .25s ease;cursor:default;}
+.rep-card:hover{transform:translateY(-8px) scale(1.02);}
+.rep-card.d{border-top:3px solid #0EA5E9;}
+.rep-card.w{border-top:3px solid var(--blue);}
+.rep-card.m{border-top:3px solid var(--navy);}
+.rep-card.q{border-top:3px solid var(--gold);}
+.rep-card.d:hover{box-shadow:0 20px 50px rgba(14,165,233,.18);}
+.rep-card.w:hover{box-shadow:0 20px 50px rgba(26,107,181,.18);}
+.rep-card.m:hover{box-shadow:0 20px 50px rgba(13,59,110,.2);}
+.rep-card.q:hover{box-shadow:0 20px 50px rgba(201,150,12,.22);}
+.rep-freq{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);margin-bottom:8px;}
+.rep-card h4{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;
+  color:var(--navy);margin-bottom:8px;}
+.rep-card p{font-size:12px;line-height:1.6;color:var(--gray);}
+
+/* ═══════════════════════════════════════
+   CASE STUDY
+═══════════════════════════════════════ */
+.cs-timeline{display:flex;flex-direction:column;gap:0;max-width:860px;margin:0 auto 40px;}
+.cs-node{display:flex;gap:24px;align-items:flex-start;position:relative;
+  opacity:0;transform:translateY(28px);
+  transition:opacity .65s ease,transform .65s ease;}
+.cs-node.cs-in{opacity:1;transform:translateY(0);}
+.cs-left{display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:56px;}
+.cs-dot{width:52px;height:52px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-size:20px;
+  border:2px solid rgba(255,255,255,.15);flex-shrink:0;
+  transition:transform .3s ease,box-shadow .3s ease;}
+.cs-node:hover .cs-dot{transform:scale(1.12);}
+.cs-vline{width:2px;flex:1;min-height:36px;background:rgba(255,255,255,.08);border-radius:2px;}
+.cs-vline.active{background:linear-gradient(var(--gold),rgba(201,150,12,.2));
+  animation:connPulse 3s ease-in-out infinite;}
+.cs-content{flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+  border-radius:var(--r16);padding:24px 28px;margin-bottom:24px;
+  transition:background .3s ease,border-color .3s ease,transform .3s ease;cursor:default;}
+.cs-content:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);
+  transform:translateX(6px);}
+.cstag{font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);
+  margin-bottom:8px;}
+.cs-content h3{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:800;
+  color:#fff;margin-bottom:10px;line-height:1.3;}
+.cs-content p{font-size:14px;line-height:1.75;color:rgba(255,255,255,.62);}
+.cs-content strong{color:rgba(255,255,255,.9);}
+.cs-node.pivot .cs-dot{background:linear-gradient(135deg,#B45309,#F59E0B);
+  animation:pivotPulse 2.4s ease-in-out infinite;border-color:rgba(245,158,11,.4);}
+.cs-node.pivot .cs-content{background:rgba(201,150,12,.1);border-color:rgba(201,150,12,.3);}
+.cs-node.pivot .cs-content:hover{background:rgba(201,150,12,.16);border-color:rgba(201,150,12,.45);}
+.cs-node.start .cs-dot{background:rgba(255,255,255,.12);}
+.cs-node.diag .cs-dot{background:linear-gradient(135deg,#1E3A5F,#1A6BB5);}
+.cs-node.find .cs-dot{background:linear-gradient(135deg,#7F1D1D,#EF4444);}
+.cs-node.fix  .cs-dot{background:linear-gradient(135deg,#064E3B,#10B981);
+  animation:fixPulse 2.8s ease-in-out infinite 1s;}
+.cs-node.fix .cs-dot{border-color:rgba(16,185,129,.4);}
+.cs-quote{border-left:3px solid rgba(201,150,12,.5);padding-left:20px;margin:16px 0;
+  transition:border-left-color .3s ease,transform .3s ease;}
+.cs-quote:hover{border-left-color:var(--gold)!important;transform:translateX(4px);}
+.cs-quote p{font-size:16px;font-style:italic;color:rgba(255,255,255,.8);line-height:1.7;}
+.cs-lesson{background:rgba(201,150,12,.12);border:1px solid rgba(201,150,12,.25);
+  border-radius:var(--r16);padding:28px 32px;
+  transition:background .3s ease,box-shadow .3s ease;cursor:default;}
+.cs-lesson:hover{background:rgba(201,150,12,.18);
+  box-shadow:0 0 50px rgba(201,150,12,.1);}
+.cs-lesson h3{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:800;
+  color:var(--gold);margin-bottom:12px;}
+.cs-lesson p{font-size:15px;line-height:1.75;color:rgba(255,255,255,.72);}
+.cs-lesson strong{color:#fff;}
+
+/* ═══════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════ */
+footer{background:var(--dark);padding:40px 56px;text-align:center;}
+footer p{font-size:13px;color:rgba(255,255,255,.25);font-family:'Space Grotesk',sans-serif;}
+
+/* ═══════════════════════════════════════
+   SCROLL FADE IN
+═══════════════════════════════════════ */
+.fade-in{opacity:0;transform:translateY(24px);
+  transition:opacity .7s ease,transform .7s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<!-- PROGRESS -->
+<div id="prog"></div>
+
+<!-- NAV -->
+<nav>
+  <span class="nb">OrthoMarketing</span>
+  <a class="np active" href="#hero">↑</a>
+  <a class="np" href="#s1">1</a>
+  <a class="np" href="#s2">2</a>
+  <a class="np" href="#s3">3</a>
+  <a class="np" href="#s4">4</a>
+  <a class="np" href="#s5">5</a>
+  <a class="np" href="#s6">6</a>
+  <a class="np" href="#s7">7</a>
+  <a class="np" href="#s8">8</a>
+  <a class="np" href="#s9">9</a>
+  <a class="np" href="#s10">10</a>
+  <a class="np star" href="#case">★ Case</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero-outer" id="hero">
+  <div class="hero-mesh"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-kicker">Ads Department Leader — 90-Day Plan</div>
+    <h1 class="hero-h1">Built for<br><span>OrthoMarketing</span></h1>
+    <p class="hero-sub">A full operating system for running dental and ortho paid media at scale — from pre-launch infrastructure to proactive strategy, tracking discipline, and team structure.</p>
+    <div class="hero-pills">
+      <div class="hero-pill"><span class="dot"></span>Pre-Launch QA</div>
+      <div class="hero-pill"><span class="dot"></span>Health Monitoring</div>
+      <div class="hero-pill"><span class="dot"></span>Diagnostic Sequence</div>
+      <div class="hero-pill"><span class="dot"></span>Team Structure</div>
+      <div class="hero-pill"><span class="dot"></span>Proactive Strategy</div>
+      <div class="hero-pill"><span class="dot"></span>Creative Strategy</div>
+      <div class="hero-pill"><span class="dot"></span>Landing Page SOPs</div>
+      <div class="hero-pill"><span class="dot"></span>Benchmarks</div>
+      <div class="hero-pill"><span class="dot"></span>Tools & Automation</div>
+      <div class="hero-pill"><span class="dot"></span>★ Case Study</div>
+    </div>
+    <div class="scroll-cue">
+      <div class="arrow">↓</div>
+      <span class="label">Scroll to explore</span>
+    </div>
+  </div>
+</div>
+
+<!-- S1: PRE-LAUNCH QA -->
+<div class="bg-off s-entry" id="s1">
+<div class="wrap">
+  <div class="fade-in">
+    <div class="eyebrow">Section 01</div>
+    <h2 class="sec-title">Pre-Launch QA</h2>
+    <p class="sec-sub">No campaign goes live without passing all four phases. Every phase has a defined set of checks. Every check has a defined owner. The gate is confirmed, not assumed.</p>
+  </div>
+  <div class="phase-flow fade-in">
+    <div class="phase-card">
+      <div class="pnum">Phase 01</div>
+      <h4>Creative &amp; Compliance</h4>
+      <ul>
+        <li>Brief reviewed vs. approved offer</li>
+        <li>Meta health policy checked</li>
+        <li>HIPAA: no patient data in creative</li>
+        <li>Client written sign-off obtained</li>
+      </ul>
+    </div>
+    <div class="phase-arrow"><span>→</span></div>
+    <div class="phase-card">
+      <div class="pnum">Phase 02</div>
+      <h4>Technical Infrastructure</h4>
+      <ul>
+        <li>UTM structure mapped &amp; confirmed</li>
+        <li>Landing page live, SSL, &lt;3s mobile</li>
+        <li>Form fields map to SmileHub fields</li>
+        <li>Offer on page = offer in ad (exact)</li>
+      </ul>
+    </div>
+    <div class="phase-arrow"><span>→</span></div>
+    <div class="phase-card">
+      <div class="pnum">Phase 03</div>
+      <h4>Tracking Verification</h4>
+      <ul>
+        <li>Pixel fires — confirmed in GTM Preview</li>
+        <li>Conversion event fires on <strong>submit</strong> not load</li>
+        <li>Test lead traced to SmileHub pipeline</li>
+        <li>UTM parameters arrive in CRM fields</li>
+      </ul>
+    </div>
+    <div class="phase-arrow"><span>→</span></div>
+    <div class="phase-card">
+      <div class="pnum">Phase 04</div>
+      <h4>Campaign Settings Audit</h4>
+      <ul>
+        <li>Geo &amp; exclusions verified</li>
+        <li>Bidding strategy matches data maturity</li>
+        <li>Search: NOT on Display Network</li>
+        <li>Ad scheduling vs. practice hours</li>
+      </ul>
+    </div>
+    <div class="phase-arrow"><span>→</span></div>
+    <div class="launch-cap">
+      <span class="lcheck">✓</span>
+      <span>Test Lead in SmileHub</span>
+      <span style="font-size:10px;opacity:.7;font-weight:400;">Non-negotiable gate</span>
+    </div>
+  </div>
+  <div class="rule fade-in">
+    <b>The Non-Negotiable Rule</b>
+    <p>Nothing goes live until a test lead is confirmed inside SmileHub — in the correct pipeline stage with the correct automation fired. Not a gut check. A confirmed test lead.</p>
+  </div>
+</div>
+</div>
+
+<!-- S2: HEALTH MONITORING -->
+<div class="bg-white s-entry" id="s2">
+<div class="wrap">
+  <div class="fade-in">
+    <div class="eyebrow">Section 02</div>
+    <h2 class="sec-title">Account Health Monitoring</h2>
+    <p class="sec-sub">With dozens of dental accounts running simultaneously, we need a tiered alert system — not manual checking. Human attention is directed to accounts that actually need it.</p>
+  </div>
+  <div class="tiers fade-in">
+    <div class="tier critical">
+      <div class="tier-head">
+        <div class="tier-label">🔴 Critical</div>
+        <div class="tier-sla">Respond in 2 hrs</div>
+      </div>
+      <div class="tier-body">
+        <ul>
+          <li>Zero conversions — 48+ hrs on active account</li>
+          <li>Payment method declined</li>
+          <li>All campaigns paused unexpectedly</li>
+          <li>SmileHub not receiving leads</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tier warning">
+      <div class="tier-head">
+        <div class="tier-label">🟡 Warning</div>
+        <div class="tier-sla">Respond in 8 hrs</div>
+      </div>
+      <div class="tier-body">
+        <ul>
+          <li>CPL &gt;20% above target — 3 consecutive days</li>
+          <li>Lead volume drop &gt;40% day-over-day</li>
+          <li>Pacing deviation &gt;25%</li>
+          <li>Primary ad disapproved</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tier watch">
+      <div class="tier-head">
+        <div class="tier-label">🟢 Watch</div>
+        <div class="tier-sla">Review weekly</div>
+      </div>
+      <div class="tier-body">
+        <ul>
+          <li>CPL trend: 3+ days above benchmark</li>
+          <li>Meta frequency creeping above 2.3</li>
+          <li>Quality Score declining (Google)</li>
+          <li>Budget efficiency slipping</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="kpi-row fade-in">
+    <div class="kpi-card">
+      <div class="km" data-target="65" data-suffix="s">&lt;65s</div>
+      <div class="kl">Speed-to-First Call</div>
+    </div>
+    <div class="kpi-card">
+      <div class="km" data-target="20" data-suffix="%">&gt;20%</div>
+      <div class="kl">Form Completion Rate</div>
+    </div>
+    <div class="kpi-card">
+      <div class="km" data-target="35" data-suffix="%">&gt;35%</div>
+      <div class="kl">Lead-to-Appointment</div>
+    </div>
+    <div class="kpi-card">
+      <div class="km" data-target="7" data-suffix="+">7+</div>
+      <div class="kl">Quality Score Target</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- S3: DIAGNOSTIC -->
+<div class="bg-off s-entry" id="s3">
+<div class="wrap">
+  <div class="fade-in">
+    <div class="eyebrow">Section 03</div>
+    <h2 class="sec-title">The Diagnostic Sequence</h2>
+    <p class="sec-sub">When an issue is flagged, the investigation follows this fixed sequence. No campaign setting is touched until all upstream layers are confirmed clean. This prevents the #1 agency mistake.</p>
+  </div>
+  <div class="diag-flow">
+    <div class="diag-step">
+      <div class="dnum">!</div>
+      <div class="dtxt"><h4>Issue Flagged</h4><p>Alert triggered via dashboard anomaly, automated monitor, or manual observation</p></div>
+    </div>
+    <div class="diag-conn"><div class="diag-conn-line"></div></div>
+    <div class="diag-step">
+      <div class="dnum">1</div>
+      <div class="dtxt"><h4>Platform Status</h4><p>Is Google or Meta experiencing a known outage? Check status pages before doing anything else</p></div>
+    </div>
+    <div class="diag-conn"><div class="diag-conn-line"></div></div>
+    <div class="diag-step">
+      <div class="dnum">2</div>
+      <div class="dtxt"><h4>Billing &amp; Account Access</h4><p>Payment method valid? Account active? Admin access intact?</p></div>
+    </div>
+    <div class="diag-conn"><div class="diag-conn-line"></div></div>
+    <div class="diag-step">
+      <div class="dnum">3</div>
+      <div class="dtxt"><h4>Ad Approvals</h4><p>Any disapprovals? Policy flags? Check all active ads for status changes</p></div>
+    </div>
+    <div class="diag-conn"><div class="diag-conn-line"></div></div>
+    <div class="diag-step step-warn">
+      <div class="dnum">4</div>
+      <div class="dtxt"><h4>🎯 Tracking Verification — Critical Step</h4><p>Open GTM Preview. Submit a test form. Does the conversion tag fire on submit — not page load? Is the event reaching Google/Meta? This single check resolves the majority of "campaign failures"</p></div>
+    </div>
+    <div class="diag-conn"><div class="diag-conn-line"></div></div>
+    <div class="diag-step">
+      <div class="dnum">5</div>
+      <div class="dtxt"><h4>Landing Page</h4><p>Is the page live? Loading under 3 seconds? Form functional? Offer still valid?</p></div>
+    </div>
+    <div class="diag-conn"><div class="diag-conn-line"></div></div>
+    <div class="diag-step">
+      <div class="dnum">6</div>
+      <div class="dtxt"><h4>CRM Sync</h4><p>Is SmileHub receiving leads? Are automations firing? Is the pipeline routing correctly?</p></div>
+    </div>
+    <div class="diag-conn"><div class="diag-conn-line"></div></div>
+    <div class="diag-step step-final">
+      <div class="dnum">7</div>
+      <div class="dtxt"><h4>Campaign Settings — Only Now</h4><p>Bidding, targeting, audiences, creative. Only investigated after all upstream layers are confirmed clean</p></div>
+    </div>
+  </div>
+  <div class="diag-rule fade-in">
+    <div class="diag-rule-icon">⚡</div>
+    <div class="diag-rule-txt">
+      <h4>The Discipline That Separates Good from Average</h4>
+      <p>A broken conversion tag is invisible from the outside. It looks exactly like a failing campaign. The instinct — touching campaign settings — makes it worse by feeding bad signals to an already-confused algorithm. Check tracking first, every time, without exception.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- S4: TEAM -->
+<div class="bg-white s-entry" id="s4">
+<div class="wrap">
+  <div class="fade-in">
+    <div class="eyebrow">Section 04</div>
+    <h2 class="sec-title">Team Structure &amp; Cadence</h2>
+    <p class="sec-sub">Accounts are owned — not shared. Every account has one named manager responsible for its performance. Escalation paths are clear and documented.</p>
+  </div>
+  <div class="org fade-in" style="margin-bottom:48px;">
+    <div class="org-top">
+      <div class="org-box lead">Department Lead<div class="ocount">Strategy · QA · Escalations · Hiring</div></div>
+    </div>
+    <div class="org-line"><div class="org-vert"></div></div>
+    <div class="org-mid" style="gap:48px;">
+      <div class="org-branch">
+        <div class="org-box sr">Senior Ads Manager<div class="ocount">12–18 accounts · Complex</div></div>
+        <div class="org-brline"><div></div></div>
+        <div class="org-box mg">Ads Manager<div class="ocount">15–20 accounts · Standard</div></div>
+      </div>
+      <div class="org-branch">
+        <div class="org-box sr">Senior Ads Manager<div class="ocount">12–18 accounts · Complex</div></div>
+        <div class="org-brline"><div></div></div>
+        <div class="org-box mg">Ads Manager<div class="ocount">15–20 accounts · Standard</div></div>
+      </div>
+      <div class="org-branch">
+        <div class="org-box co" style="margin-top:0;">Campaign Coordinator<div class="ocount">Setup · Reporting · QA Support</div></div>
+        <div class="org-brline"><div></div></div>
+        <div class="org-box co">Creative Liaison<div class="ocount">Briefs in · Quality out</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="cad-row fade-in">
+    <div class="cad-card">
+      <div class="cad-badge" style="background:#EEF4FD;color:var(--navy);">Daily</div>
+      <h4>Async Slack Check</h4>
+      <p>Anomaly flags reviewed, alerts actioned. No meetings. Updates posted to account channels by 9am.</p>
+    </div>
+    <div class="cad-card">
+      <div class="cad-badge" style="background:var(--blue-lt);color:var(--blue);">Weekly</div>
+      <h4>45-min Team Sync</h4>
+      <p>Watch-tier reviews, cross-account learnings shared, creative pipeline updated, blockers cleared.</p>
+    </div>
+    <div class="cad-card">
+      <div class="cad-badge" style="background:rgba(16,185,129,.1);color:#065F46;">Monthly</div>
+      <h4>Portfolio Review</h4>
+      <p>Full performance review per account, benchmark refresh, CPL trend analysis, client report prep.</p>
+    </div>
+    <div class="cad-card">
+      <div class="cad-badge" style="background:var(--gold-lt);color:var(--gold-d);">Quarterly</div>
+      <h4>Strategy Refresh</h4>
+      <p>Seasonal planning, benchmark updates, competitive scan via Meta Ad Library, offer calendar set.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- S5: PROACTIVE (DARK) -->
+<div class="bg-navy on-dark s-entry" id="s5">
+<div class="wrap">
+  <div class="fade-in">
+    <div class="eyebrow">Section 05</div>
+    <h2 class="sec-title" style="color:#fff;">Proactive Strategy</h2>
+    <p class="sec-sub">Reactive agencies wait for CPL complaints. Proactive agencies ride demand waves before they arrive and surface problems before clients notice them.</p>
+  </div>
+  <div class="cal-label fade-in">Dental &amp; Ortho Seasonal Demand Calendar</div>
+  <div class="cal-row fade-in">
+    <div class="month hot">Jan<span class="month-tag">Invisalign</span></div>
+    <div class="month cool">Feb<span class="month-tag">Steady</span></div>
+    <div class="month cool">Mar<span class="month-tag">Steady</span></div>
+    <div class="month warm">Apr<span class="month-tag">Cosmetic</span></div>
+    <div class="month hot">May<span class="month-tag">Wedding</span></div>
+    <div class="month cool">Jun<span class="month-tag">Steady</span></div>
+    <div class="month cool">Jul<span class="month-tag">Steady</span></div>
+    <div class="month hot">Aug<span class="month-tag">Back-to-School</span></div>
+    <div class="month hot">Sep<span class="month-tag">Teen Ortho</span></div>
+    <div class="month cool">Oct<span class="month-tag">Steady</span></div>
+    <div class="month hot">Nov<span class="month-tag">FSA/HSA</span></div>
+    <div class="month hot">Dec<span class="month-tag">Spend-Down</span></div>
+  </div>
+  <div style="display:flex;gap:16px;margin-bottom:40px;flex-wrap:wrap;" class="fade-in">
+    <span style="display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.5);">
+      <span style="width:12px;height:12px;border-radius:2px;background:var(--gold);display:inline-block;"></span> Hot window — brief creative 4 weeks prior
+    </span>
+    <span style="display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.5);">
+      <span style="width:12px;height:12px;border-radius:2px;background:rgba(201,150,12,.3);display:inline-block;"></span> Warm — increased budgets
+    </span>
+  </div>
+  <div class="audit-grid fade-in">
+    <div class="audit-card">
+      <h4>📊 Tracking Integrity Audit</h4>
+      <p>Quarterly GTM audit across all accounts. Conversion tag chain verified end-to-end. CRM sync confirmed. Automated daily health check reviewed.</p>
+    </div>
+    <div class="audit-card">
+      <h4>🖥 Landing Page Alignment</h4>
+      <p>Every active landing page checked against live offer. Page speed re-tested on mobile. Form-to-CRM mapping re-verified. Outdated offers flagged and updated.</p>
+    </div>
+    <div class="audit-card">
+      <h4>🤖 CRM Automation Health</h4>
+      <p>SmileHub automations tested: lead routing, email sequences, speed-to-call triggers. Broken or stale automations rebuilt. New sequences proposed where gaps exist.</p>
+    </div>
+    <div class="audit-card">
+      <h4>🎨 Creative Refresh Scan</h4>
+      <p>Any creative running &gt;90 days flagged for refresh. Competitor creative scanned via Meta Ad Library. New seasonal angles briefed to creative team.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- S6: CROSS-FUNCTIONAL -->
+<div class="bg-off s-entry" id="s6">
+<div class="wrap">
+  <div class="fade-in">
+    <div class="eyebrow">Section 06</div>
+    <h2 class="sec-title">Cross-Functional Coordination</h2>
+    <p class="sec-sub">Performance issues rarely live in one lane. When a dental campaign underperforms and the campaign itself is clean, the problem is usually downstream. We own the diagnosis regardless of where the root cause lives.</p>
+  </div>
+  <div class="matrix fade-in">
+    <table>
+      <thead>
+        <tr><th>Issue Type</th><th>Investigation Owner</th><th>Resolution Owner</th><th>SLA</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Payment method failed</td>
+          <td class="owner">Ads Manager</td>
+          <td>Account Finance</td>
+          <td><span class="sla sla-crit">1 hr</span></td>
+        </tr>
+        <tr>
+          <td>Conversion tracking broken</td>
+          <td class="owner">Ads Manager</td>
+          <td>Ads Manager / Dev</td>
+          <td><span class="sla sla-crit">4 hrs</span></td>
+        </tr>
+        <tr>
+          <td>Landing page down / slow</td>
+          <td class="owner">Ads Manager flags</td>
+          <td>Web Team</td>
+          <td><span class="sla sla-crit">2 hrs</span></td>
+        </tr>
+        <tr>
+          <td>SmileHub not receiving leads</td>
+          <td class="owner">Ads Manager</td>
+          <td>CRM Team</td>
+          <td><span class="sla sla-crit">4 hrs</span></td>
+        </tr>
+        <tr>
+          <td>Ad disapproval — policy issue</td>
+          <td class="owner">Ads Manager</td>
+          <td>Ads Manager + Creative</td>
+          <td><span class="sla sla-warn">8 hrs</span></td>
+        </tr>
+        <tr>
+          <td>Offer changed without notice</td>
+          <td class="owner">Ads Manager flags</td>
+          <td>Client + Web + Ads</td>
+          <td><span class="sla sla-warn">Same day</span></td>
+        </tr>
+        <tr>
+          <td>CPL spike — &gt;3 days</td>
+          <td class="owner">Ads Manager</td>
+          <td>Ads Manager</td>
+          <td><span class="sla sla-ok">48 hrs</span></td>
+        </tr>
+        <tr>
+          <td>Creative frequency fatigue</td>
+          <td class="owner">Ads Manager</td>
+          <td>Creative Liaison</td>
+          <td><span class="sla sla-ok">Weekly cycle</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="rule fade-in">
+    <b>Root Cause Rule</b>
+    <p>No issue is closed until the root cause is documented — not just the symptom fixed. Every P1 and P2 issue gets a written root cause note. That record builds the team's diagnostic intelligence over time and prevents recurrence.</p>
+  </div>
+</div>
+</div>
+
+<!-- S7: CREATIVE -->
+<div class="bg-white s-entry" id="s7">
+<div class="wrap">
+  <div class="fade-in">
+    <div class="eyebrow">Section 07</div>
+    <h2 class="sec-title">Creative Strategy for Dental &amp; Ortho</h2>
+    <p class="sec-sub">Not all dental services convert the same way. Three distinct service segments require three distinct creative approaches. Generic "best dentist in [city]" messaging loses to practices that understand why patients convert.</p>
+  </div>
+  <div class="seg-grid fade-in">
+    <div class="seg-card hv">
+      <div class="seg-head">
+        <h4>High-Value / Considered</h4>
+        <p>Invisalign · Implants · Veneers</p>
+      </div>
+      <div class="seg-body">
+        <ul>
+          <li>Research cycle is long — awareness + retargeting layers required</li>
+          <li>Lead with outcomes: before/after journeys, patient video testimonials</li>
+          <li>Offer: free consultation, not "book treatment" — meet them where they are</li>
+          <li>Trust signals: doctor credentials, years experience, accreditations</li>
+          <li>Financing messaging ("from $X/month") removes cost anxiety</li>
+          <li>Meta: Lookalike from existing Invisalign patients. Google: branded + intent</li>
+        </ul>
+      </div>
+    </div>
+    <div class="seg-card acc">
+      <div class="seg-head">
+        <h4>Accessibility &amp; Volume</h4>
+        <p>Cleanings · Checkups · Whitening</p>
+      </div>
+      <div class="seg-body">
+        <ul>
+          <li>Faster decision cycle — offer-led messaging works</li>
+          <li>Specificity beats aspiration: "Same-day appointments available" converts</li>
+          <li>Price anchoring where appropriate: "From $X, no insurance needed"</li>
+          <li>Urgency: limited slots, same-week availability</li>
+          <li>Target broad + geo-tightened within drive radius</li>
+          <li>Google Search &gt; Meta for this tier — high intent queries</li>
+        </ul>
+      </div>
+    </div>
+    <div class="seg-card teen">
+      <div class="seg-head">
+        <h4>Teen Orthodontics</h4>
+        <p>Braces · Clear Aligners · Retainers</p>
+      </div>
+      <div class="seg-body">
+        <ul>
+          <li>Decision-maker is the parent — NOT the teenager</li>
+          <li>Target: Female, 32–48. Message to them, not to the teen</li>
+          <li>Back-to-school window (Aug–Sep) is peak — plan creative in July</li>
+          <li>Payment plan messaging: "Fits your family budget"</li>
+          <li>Board-certified orthodontist credentials prominent</li>
+          <li>Scheduling flexibility around school hours</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="test-row fade-in">
+    <div class="test-card">
+      <h5>Testing Structure</h5>
+      <p>3 angles × 3 formats × 3 CTAs in rotation. Declare a winner only after statistical confidence — not gut feel or single-day results.</p>
+    </div>
+    <div class="test-card">
+      <h5>Frequency Rules</h5>
+      <p>Meta frequency alert at 2.5. Hard restructure trigger at 3.0. Weekly check on all active ad sets. Documented learnings shared across team.</p>
+    </div>
+    <div class="test-card">
+      <h5>Quarterly Offer Audit</h5>
+      <p>Every active offer reviewed: still valid? Still competitive? Still matched on the landing page? Discontinued offers killed immediately.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- S8: LANDING PAGES (DARK) -->
+<div class="bg-navy on-dark s-entry" id="s8">
+<div class="wrap">
+  <div class="fade-in">
+    <div class="eyebrow">Section 08</div>
+    <h2 class="sec-title" style="color:#fff;">Landing Page SOPs</h2>
+    <p class="sec-sub">Every paid campaign gets a dedicated landing page — no exceptions. The landing page is the conversion environment. Sending dental paid traffic to a homepage is one of the most common and costly agency errors.</p>
+  </div>
+  <div class="lp-wrap fade-in">
+    <div>
+      <div class="lp-mockup">
+        <div class="lp-bar">
+          <div class="lp-dot" style="background:#FF5F56;"></div>
+          <div class="lp-dot" style="background:#FFBD2E;"></div>
+          <div class="lp-dot" style="background:#27C93F;"></div>
+          <div class="lp-url">yourpractice.com/free-invisalign-consult</div>
+        </div>
+        <div class="lp-page">
+          <div class="lp-hero">
+            <h3>Free Invisalign Consultation</h3>
+            <p>Board-certified · Same-week appointments · Flexible financing</p>
+            <div class="lp-form">
+              <div class="lp-input">Full Name</div>
+              <div class="lp-input">Phone Number</div>
+              <div class="lp-input">Preferred Day</div>
+              <div class="lp-btn">Book My Free Consultation →</div>
+            </div>
+          </div>
+          <div class="lp-trust">
+            <span>⭐ 4.9 (312 reviews)</span>
+            <span>📍 2.3 miles away</span>
+            <span>✓ Same-week availability</span>
+          </div>
+          <div class="lp-body">
+            <p style="font-size:10px;color:#999;margin:0;">Social proof, before/after images, FAQs below the fold. Form is always above it.</p>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap;">
+        <span style="font-size:11px;padding:4px 10px;border-radius:10px;background:rgba(16,185,129,.15);color:#6EE7B7;font-weight:600;">✓ Form above fold</span>
+        <span style="font-size:11px;padding:4px 10px;border-radius:10px;background:rgba(16,185,129,.15);color:#6EE7B7;font-weight:600;">✓ Offer match (exact)</span>
+        <span style="font-size:11px;padding:4px 10px;border-radius:10px;background:rgba(16,185,129,.15);color:#6EE7B7;font-weight:600;">✓ &lt;3s mobile load</span>
+        <span style="font-size:11px;padding:4px 10px;border-radius:10px;background:rgba(16,185,129,.15);color:#6EE7B7;font-weight:600;">✓ Single CTA</span>
+      </div>
+    </div>
+    <div>
+      <div class="lp-rules">
+        <div class="lp-rule-card">
+          <h5>Dedicated Page Per Campaign</h5>
+          <p>Homepage sends — no. Generic service pages — no. Every paid campaign needs a page that matches the ad offer word-for-word. Headline, sub, offer, CTA — exact match.</p>
+        </div>
+        <div class="lp-rule-card">
+          <h5>Mobile-First Build Standard</h5>
+          <p>Over 70% of dental paid search traffic arrives on mobile. Design for the phone screen first. Form above fold on mobile is non-negotiable. Test on real devices, not Chrome DevTools.</p>
+        </div>
+        <div class="lp-rule-card">
+          <h5>Monthly Offer Alignment Check</h5>
+          <p>Every active page checked monthly against the live offer. Any discrepancy flagged same day. Offer changes by the client trigger an immediate page update — this is a contractual requirement.</p>
+        </div>
+      </div>
+      <div class="lp-warn">
+        <h5>⚠ The Silent Failure Point</h5>
+        <p>A practice discontinues an offer without telling the agency. The ad keeps running. The page still promises it. Conversion rate drops 30%+ over two weeks. No one knows why until the client calls. Prevention: offer change notification is contractual. Quarterly page audits happen regardless.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- S9: BENCHMARKS -->
+<div class="bg-off s-entry" id="s9">
+<div class="wrap">
+  <div class="fade-in">
+    <div class="eyebrow">Section 09</div>
+    <h2 class="sec-title">Department Benchmarks</h2>
+    <p class="sec-sub">Benchmarks built from real portfolio data — not generic industry averages. Starting targets refined monthly. The point is to separate genuine underperformance from normal variance.</p>
+  </div>
+  <div class="bench-grid fade-in">
+    <div class="bench-section">
+      <h3>📍 Google Search — CPL Targets</h3>
+      <div class="bench-row">
+        <div class="bench-label"><span>General Dental (single loc.)</span><span class="bench-val">$30–$65</span></div>
+        <div class="bench-track"><div class="bench-bar g" style="--w:45%;"></div></div>
+      </div>
+      <div class="bench-row">
+        <div class="bench-label"><span>Invisalign / Clear Aligners</span><span class="bench-val">$50–$100</span></div>
+        <div class="bench-track"><div class="bench-bar g" style="--w:62%;"></div></div>
+      </div>
+      <div class="bench-row">
+        <div class="bench-label"><span>Dental Implants</span><span class="bench-val">$80–$160</span></div>
+        <div class="bench-track"><div class="bench-bar g" style="--w:80%;"></div></div>
+      </div>
+      <div class="bench-row">
+        <div class="bench-label"><span>Multi-Location (volume)</span><span class="bench-val">10–20% lower</span></div>
+        <div class="bench-track"><div class="bench-bar g" style="--w:35%;"></div></div>
+      </div>
+    </div>
+    <div class="bench-section">
+      <h3>📘 Meta Ads — CPL Targets</h3>
+      <div class="bench-row">
+        <div class="bench-label"><span>Lead Gen Form (any service)</span><span class="bench-val">$18–$45</span></div>
+        <div class="bench-track"><div class="bench-bar b" style="--w:30%;"></div></div>
+      </div>
+      <div class="bench-row">
+        <div class="bench-label"><span>Website Conversion</span><span class="bench-val">$30–$65</span></div>
+        <div class="bench-track"><div class="bench-bar b" style="--w:45%;"></div></div>
+      </div>
+      <div class="bench-row">
+        <div class="bench-label"><span>Frequency Alert Threshold</span><span class="bench-val">&gt;2.5</span></div>
+        <div class="bench-track"><div class="bench-bar b" style="--w:25%;"></div></div>
+      </div>
+      <div class="bench-row">
+        <div class="bench-label"><span>Retargeting Frequency Cap</span><span class="bench-val">3–4 weekly</span></div>
+        <div class="bench-track"><div class="bench-bar b" style="--w:20%;"></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="crm-grid fade-in">
+    <div class="crm-card">
+      <div class="crm-val">&lt;5 min</div>
+      <div class="crm-lbl">Speed-to-First Call<br>Practices calling within 5 min convert dramatically better</div>
+    </div>
+    <div class="crm-card">
+      <div class="crm-val">&gt;35%</div>
+      <div class="crm-lbl">Lead-to-Appointment<br>Minimum conversion rate from form to booked</div>
+    </div>
+    <div class="crm-card">
+      <div class="crm-val">&gt;65%</div>
+      <div class="crm-lbl">Appointment Show Rate<br>Show rate below this triggers follow-up sequence review</div>
+    </div>
+    <div class="crm-card">
+      <div class="crm-val">6+</div>
+      <div class="crm-lbl">Follow-up Attempts<br>Minimum contact attempts before a lead is marked lost</div>
+    </div>
+  </div>
+  <div class="four-day fade-in">
+    <div class="four-day-icon">📅</div>
+    <div>
+      <h4>The 3-Day Rule</h4>
+      <p>A metric must breach its threshold for <strong>three consecutive days</strong> before a campaign change is triggered. Single-day anomalies are monitored, not reacted to. One bad day is noise. Three consecutive days is a signal. This discipline prevents unnecessary churn in accounts that are actually performing fine.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- S10: TOOLS -->
+<div class="bg-white s-entry" id="s10">
+<div class="wrap">
+  <div class="fade-in">
+    <div class="eyebrow">Section 10</div>
+    <h2 class="sec-title">Tools, Automation &amp; Reporting</h2>
+    <p class="sec-sub">The right stack eliminates manual work, catches issues automatically, and gives leadership and clients the clarity they need without requiring everyone to become an analyst.</p>
+  </div>
+  <div class="tools-grid fade-in">
+    <div class="tool-cat">
+      <h4>Paid Media</h4>
+      <div class="tool-item">
+        <div class="tool-icon" style="background:#E8F0FE;">🔵</div>
+        <div class="tool-info"><strong>Google Ads</strong><span>Search, PMax, Display, LSA</span></div>
+      </div>
+      <div class="tool-item">
+        <div class="tool-icon" style="background:#F0E6FF;">🟣</div>
+        <div class="tool-info"><strong>Meta Ads Manager</strong><span>Facebook &amp; Instagram campaigns</span></div>
+      </div>
+      <div class="tool-item">
+        <div class="tool-icon" style="background:#E6F4FF;">🔷</div>
+        <div class="tool-info"><strong>Microsoft Ads</strong><span>Bing — supplemental for select accounts</span></div>
+      </div>
+    </div>
+    <div class="tool-cat">
+      <h4>CRM &amp; Automation</h4>
+      <div class="tool-item">
+        <div class="tool-icon" style="background:#FFF0E6;">🟠</div>
+        <div class="tool-info"><strong>SmileHub / GHL</strong><span>Lead routing, pipelines, automations</span></div>
+      </div>
+      <div class="tool-item">
+        <div class="tool-icon" style="background:#E6FFF4;">🟢</div>
+        <div class="tool-info"><strong>Make.com</strong><span>Cross-platform automation workflows</span></div>
+      </div>
+      <div class="tool-item">
+        <div class="tool-icon" style="background:#FFFDE6;">🟡</div>
+        <div class="tool-info"><strong>Slack</strong><span>Alerts, async comms, account channels</span></div>
+      </div>
+    </div>
+    <div class="tool-cat">
+      <h4>Analytics &amp; Tracking</h4>
+      <div class="tool-item">
+        <div class="tool-icon" style="background:#FFF3E0;">🔶</div>
+        <div class="tool-info"><strong>GTM + GA4</strong><span>Tracking infrastructure, event config</span></div>
+      </div>
+      <div class="tool-item">
+        <div class="tool-icon" style="background:#E8F5E9;">🟩</div>
+        <div class="tool-info"><strong>Looker Studio</strong><span>Client dashboards, automated reports</span></div>
+      </div>
+      <div class="tool-item">
+        <div class="tool-icon" style="background:#E8EAF6;">🔹</div>
+        <div class="tool-info"><strong>Windsor.ai</strong><span>Cross-channel data consolidation</span></div>
+      </div>
+    </div>
+    <div class="tool-cat">
+      <h4>Creative &amp; Competitor</h4>
+      <div class="tool-item">
+        <div class="tool-icon" style="background:#FCE4EC;">🌸</div>
+        <div class="tool-info"><strong>Canva Pro</strong><span>Ad creative, landing page mockups</span></div>
+      </div>
+      <div class="tool-item">
+        <div class="tool-icon" style="background:#E8F0FE;">🎬</div>
+        <div class="tool-info"><strong>CapCut</strong><span>Video ad editing</span></div>
+      </div>
+      <div class="tool-item">
+        <div class="tool-icon" style="background:#E3F2FD;">🔍</div>
+        <div class="tool-info"><strong>Meta Ad Library</strong><span>Competitor creative intelligence</span></div>
+      </div>
+    </div>
+    <div class="tool-cat">
+      <h4>Optimisation &amp; CRO</h4>
+      <div class="tool-item">
+        <div class="tool-icon" style="background:#FFF8E1;">🔥</div>
+        <div class="tool-info"><strong>Hotjar</strong><span>Heatmaps, session recordings</span></div>
+      </div>
+      <div class="tool-item">
+        <div class="tool-icon" style="background:#E0F2F1;">🤖</div>
+        <div class="tool-info"><strong>Claude / ChatGPT</strong><span>Copy, analysis, brief writing</span></div>
+      </div>
+      <div class="tool-item">
+        <div class="tool-icon" style="background:#FBE9E7;">🎥</div>
+        <div class="tool-info"><strong>Loom</strong><span>Async client &amp; team communication</span></div>
+      </div>
+    </div>
+    <div class="tool-cat">
+      <h4>Project Management</h4>
+      <div class="tool-item">
+        <div class="tool-icon" style="background:#E8F0FE;">📋</div>
+        <div class="tool-info"><strong>Notion</strong><span>SOPs, playbooks, team documentation</span></div>
+      </div>
+      <div class="tool-item">
+        <div class="tool-icon" style="background:#F3E5F5;">📌</div>
+        <div class="tool-info"><strong>Asana</strong><span>Campaign setup tasks, QA checklists</span></div>
+      </div>
+      <div class="tool-item">
+        <div class="tool-icon" style="background:#E8F5E9;">📊</div>
+        <div class="tool-info"><strong>Google Sheets</strong><span>Keyword lists, budget planning</span></div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-bottom:12px;" class="fade-in">
+    <div class="eyebrow">Q1 Priority Automations</div>
+  </div>
+  <div class="auto-grid fade-in">
+    <div class="auto-card">
+      <div class="auto-head">CPL Alert System</div>
+      <div class="auto-body">When CPL breaches threshold for 2 consecutive days, auto-ping the responsible manager in the account's Slack channel. No one needs to check dashboards to know something's wrong.</div>
+    </div>
+    <div class="auto-card">
+      <div class="auto-head">Daily Lead Sync Health Check</div>
+      <div class="auto-body">An automated test lead submitted every morning confirms the SmileHub integration is live. This catches silent CRM failures that would otherwise go undetected for days — before any client notices.</div>
+    </div>
+    <div class="auto-card">
+      <div class="auto-head">Weekly Creative Performance Report</div>
+      <div class="auto-body">Auto-generated report showing top 3 and bottom 3 creative per account, delivered every Monday morning. No one builds it manually. Managers review and act, not compile.</div>
+    </div>
+  </div>
+  <div style="margin-bottom:12px;" class="fade-in"><div class="eyebrow">Reporting Cadence</div></div>
+  <div class="rep-grid fade-in">
+    <div class="rep-card d">
+      <div class="rep-freq">Daily</div>
+      <h4>Automated Dashboard</h4>
+      <p>Live Looker Studio dashboard. No human required. Managers check in, not compile.</p>
+    </div>
+    <div class="rep-card w">
+      <div class="rep-freq">Weekly</div>
+      <h4>Internal Review</h4>
+      <p>Team sync — top performers, Watch-tier items, creative rotation needs.</p>
+    </div>
+    <div class="rep-card m">
+      <div class="rep-freq">Monthly</div>
+      <h4>Client Report</h4>
+      <p>Four sections: what happened, why, what we did, what's next. Readable in 60 seconds.</p>
+    </div>
+    <div class="rep-card q">
+      <div class="rep-freq">Quarterly</div>
+      <h4>Strategy Review</h4>
+      <p>Benchmark refresh, seasonal planning, competitive audit, creative retrospective.</p>
+    </div>
+  </div>
+  <div class="rule fade-in">
+    <b>Reporting Philosophy</b>
+    <p>Client reports tell a story — they don't dump numbers. A practice owner should understand their account's health in 60 seconds. If they need ten minutes, the report is the problem, not the reader.</p>
+  </div>
+</div>
+</div>
+
+<!-- CASE STUDY -->
+<div class="bg-dark on-dark s-entry" id="case">
+<div class="wrap">
+  <div class="fade-in">
+    <div class="eyebrow">Real-World Case Study</div>
+    <h2 class="sec-title" style="color:#fff;">The Diagnosis That Defines the Approach</h2>
+    <p class="sec-sub">Auto King Australia — mobile mechanic network, Google Ads, QLD &amp; NSW. I was brought in to turn around an account that had been steadily deteriorating. Here's exactly what I found — and why it matters for every dental account in this portfolio.</p>
+  </div>
+  <div class="cs-timeline">
+
+    <div class="cs-node start">
+      <div class="cs-left">
+        <div class="cs-dot">📋</div>
+        <div class="cs-vline active"></div>
+      </div>
+      <div class="cs-content">
+        <div class="cstag">The Situation</div>
+        <h3>Account Deteriorating. Previous Fixes Not Working.</h3>
+        <p>Auto King — mobile mechanic network operating across Queensland and New South Wales. Google Ads account, ~A$450/day. CPL had been inflating for months. Previous optimisation attempts — new bids, audience adjustments, creative swaps — had made no lasting difference. I was brought in to find out why.</p>
+      </div>
+    </div>
+
+    <div class="cs-node diag">
+      <div class="cs-left">
+        <div class="cs-dot">🔍</div>
+        <div class="cs-vline active"></div>
+      </div>
+      <div class="cs-content">
+        <div class="cstag">The Instinct vs. The Discipline</div>
+        <h3>Everyone Was Looking in the Wrong Place</h3>
+        <p>The natural instinct — touching campaign settings. New match types. Different bidding. Swapped creative. <strong>That was the wrong move.</strong> Before touching a single campaign setting, I opened GTM Preview mode and submitted a test form.</p>
+        <div class="cs-quote">
+          <p>Step four in the diagnostic sequence. Check tracking first. Every time.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-node find">
+      <div class="cs-left">
+        <div class="cs-dot">⚠️</div>
+        <div class="cs-vline active"></div>
+      </div>
+      <div class="cs-content">
+        <div class="cstag">The Discovery</div>
+        <h3>The Conversion Tag Did Not Fire.</h3>
+        <p>The forms themselves were working. Leads were arriving. The client had no idea anything was wrong at the data layer. But from Google's perspective — <strong>this account had never recorded a single conversion.</strong></p>
+        <p style="margin-top:12px;">A site rebuild had displaced the GTM container script. Common. Completely invisible unless you specifically check for it in GTM Preview mode.</p>
+      </div>
+    </div>
+
+    <div class="cs-node pivot">
+      <div class="cs-left">
+        <div class="cs-dot">⚡</div>
+        <div class="cs-vline active"></div>
+      </div>
+      <div class="cs-content">
+        <div class="cstag">The Pivot — Why This Changes Everything</div>
+        <h3>The Algorithm Wasn't Failing. It Was Flying Blind.</h3>
+        <p>For a significant period, Google's smart bidding algorithm had received zero conversion signals. So it did exactly what it's designed to do with no data — it optimised for what it could see: <strong>traffic volume, engagement, clicks. Not leads.</strong></p>
+        <p style="margin-top:12px;">Impression share migrated toward lower-intent queries. Every optimisation the previous manager made — against corrupted data — had amplified the drift. They were retraining a confused algorithm with more noise.</p>
+      </div>
+    </div>
+
+    <div class="cs-node fix">
+      <div class="cs-left">
+        <div class="cs-dot">✓</div>
+        <div class="cs-vline"></div>
+      </div>
+      <div class="cs-content">
+        <div class="cstag">The Fix</div>
+        <h3>Rebuilt From Clean Data Up</h3>
+        <p>Rebuilt conversion tracking in GTM. Verified the full event chain end-to-end. Created a historical conversion data import to give the algorithm a corrected signal baseline. Then gradually transitioned to a lead-optimised bidding strategy from clean data.</p>
+      </div>
+    </div>
+
+  </div>
+  <div class="cs-lesson fade-in">
+    <h3>Why This Is Every Dental Account's Risk</h3>
+    <p>A CMS migration. A WordPress update. A GTM container republish. Any of these can silently break conversion tracking. The forms still work. Leads still come in. <strong>But the algorithm starts flying blind.</strong> CPL inflates. The client calls to say the ads stopped working. Everyone looks at campaigns, audiences, creative — when the answer is one GTM Preview check away.</p>
+    <p style="margin-top:16px;">The prevention is what you've seen across this entire playbook — systematic tracking verification in Pre-Launch QA, automated daily lead sync health checks, quarterly account audits. <strong>Not reactive troubleshooting. Proactive infrastructure.</strong></p>
+  </div>
+</div>
+</div>
+
+<footer>
+  <p>Harwinder Singh — StellarRank — Prepared for OrthoMarketing / Beth</p>
+</footer>
+
+<script>
+// ── PROGRESS BAR
+const prog = document.getElementById('prog');
+window.addEventListener('scroll', () => {
+  const total = document.documentElement.scrollHeight - window.innerHeight;
+  prog.style.width = Math.round((window.scrollY / total) * 100) + '%';
+});
+
+// ── NAV ACTIVE
+const sections = ['hero','s1','s2','s3','s4','s5','s6','s7','s8','s9','s10','case'];
+const navPills = document.querySelectorAll('.np');
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const id = e.target.id;
+    const i = sections.indexOf(id);
+    navPills.forEach((p,j) => p.classList.toggle('active', j === i));
+  });
+}, { threshold: 0.35 });
+sections.forEach(id => { const el = document.getElementById(id); if(el) io.observe(el); });
+
+// ── FADE-IN ON SCROLL
+const fi = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); fi.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-in').forEach(el => fi.observe(el));
+
+// ── 3D TILT
+function tilt(sel, str = 8) {
+  document.querySelectorAll(sel).forEach(c => {
+    c.addEventListener('mousemove', e => {
+      const r = c.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - 0.5;
+      const y = (e.clientY - r.top) / r.height - 0.5;
+      c.style.transform = `perspective(900px) rotateX(${-y*str}deg) rotateY(${x*str}deg) translateZ(16px)`;
+    });
+    c.addEventListener('mouseleave', () => {
+      c.style.transform = 'perspective(900px) rotateX(0) rotateY(0) translateZ(0)';
+    });
+  });
+}
+tilt('.phase-card', 7);
+tilt('.tier', 6);
+tilt('.kpi-card', 8);
+tilt('.seg-card', 7);
+tilt('.tool-cat', 6);
+tilt('.rep-card', 9);
+tilt('.cad-card', 6);
+
+// ── BENCHMARK BAR FILL
+document.querySelectorAll('.bench-bar').forEach(b => {
+  const w = b.style.getPropertyValue('--w') || b.style.width;
+  b.dataset.w = w;
+  b.style.width = '0';
+});
+const barIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.querySelectorAll('.bench-bar').forEach((b,i) => {
+      setTimeout(() => { b.style.transition = 'width 1.5s cubic-bezier(.4,0,.2,1)'; b.style.width = b.dataset.w; }, i * 130);
+    });
+    barIO.unobserve(e.target);
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('.bench-grid').forEach(el => barIO.observe(el));
+
+// ── COUNTER ANIMATION
+function countUp(el, target, pre, suf, dur = 1600) {
+  const t0 = performance.now();
+  const tick = now => {
+    const p = Math.min((now - t0) / dur, 1);
+    const v = Math.round((1 - Math.pow(1-p, 3)) * target);
+    el.textContent = pre + v + suf;
+    if (p < 1) requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+}
+const kpiIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const cards = e.target.querySelectorAll('.kpi-card');
+    const cfg = [
+      {pre:'<',t:65,s:'s'},{pre:'>',t:20,s:'%'},{pre:'>',t:35,s:'%'},{pre:'',t:7,s:'+'}
+    ];
+    cards.forEach((c,i) => {
+      const km = c.querySelector('.km');
+      if(km && cfg[i]) setTimeout(() => countUp(km, cfg[i].t, cfg[i].pre, cfg[i].s), i*200);
+    });
+    kpiIO.unobserve(e.target);
+  });
+}, { threshold: 0.5 });
+const kpiRow = document.querySelector('.kpi-row');
+if(kpiRow) kpiIO.observe(kpiRow);
+
+// ── DIAGNOSTIC STEPS SEQUENTIAL REVEAL
+const diagIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const steps = e.target.querySelectorAll('.diag-step');
+    steps.forEach((s, i) => setTimeout(() => s.classList.add('step-in'), i * 160));
+    diagIO.unobserve(e.target);
+  });
+}, { threshold: 0.05 });
+const diagFlow = document.querySelector('.diag-flow');
+if(diagFlow) diagIO.observe(diagFlow);
+
+// ── CASE STUDY NODE REVEAL
+const csIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    e.target.querySelectorAll('.cs-node').forEach((n,i) => {
+      setTimeout(() => n.classList.add('cs-in'), i * 300);
+    });
+    csIO.unobserve(e.target);
+  });
+}, { threshold: 0.05 });
+const csTimeline = document.querySelector('.cs-timeline');
+if(csTimeline) csIO.observe(csTimeline);
+
+// ── HERO PILLS STAGGER
+document.querySelectorAll('.hero-pill').forEach((p,i) => {
+  p.style.cssText += `animation-delay:${0.8 + i*0.07}s;opacity:0;`;
+  setTimeout(() => { p.style.opacity='1'; }, (0.8 + i*0.07) * 1000);
+});
+</script>
+</body>
+</html>
